@@ -11,6 +11,6 @@ namespace BusinessLogic.Views
         
         public string examName { get; set; }
 
-        Examiner examiner { get; set; }
+       public Dictionary<int,int> examinations { get; set; }
     }
 }

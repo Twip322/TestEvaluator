@@ -9,9 +9,7 @@ namespace BusinessLogic.Views
         public int? Id { get; set; }
 
         public string name { get; set; }
-
-        Group group { get; set; }
-        List<Test> tests { get; set; }
-        List<Examination> examinations { get; set; }
+        public Dictionary<int,int> tests { get; set; }
+        public Dictionary<int,int> examinations { get; set; }
     }
 }
