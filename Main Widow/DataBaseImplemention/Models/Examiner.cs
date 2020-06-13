@@ -8,8 +8,7 @@ namespace DataBaseImplemention.Models
     public class Examiner
     {
         public int Id { get; set; }
-        public string name { get; set; }
-        [ForeignKey("examNameId")]
-        public virtual List<Examination> Examinations { get; set; }
+        public string examinerName { get; set; }
+        public virtual Test Test { get; set; }
     }
 }

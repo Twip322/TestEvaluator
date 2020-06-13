@@ -1,6 +1,6 @@
 ﻿namespace Main_Widow
 {
-    partial class Form1
+    partial class FromMain
     {
         /// <summary>
         ///  Required designer variable.

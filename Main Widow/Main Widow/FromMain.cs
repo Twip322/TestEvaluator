@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Main_Widow
 {
-    public partial class Form1 : Form
+    public partial class FromMain : Form
     {
-        public Form1()
+        public FromMain()
         {
             InitializeComponent();
         }
