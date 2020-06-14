@@ -19,7 +19,7 @@ namespace UserInterface
 
         private void FormTesting_Load(object sender, EventArgs e)
         {
-            comboBox1.Items{ }
+
         }
 
         private void StartTest_Click(object sender, EventArgs e)

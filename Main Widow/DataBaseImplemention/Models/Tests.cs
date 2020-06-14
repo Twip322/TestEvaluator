@@ -5,12 +5,11 @@ using System.Text;
 
 namespace DataBaseImplemention.Models
 {
-    public class Test
+    public class Tests
     {
         public int Id { get; set; }
-            
-        [ForeignKey("questionId")]
-        public virtual List<Question> Questions { get; set; }
+        public string testName { get; set; }
+        public virtual List<TestQuestions> testQuestionss { get; set; }
 
     }
 }

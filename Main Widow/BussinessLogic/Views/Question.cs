@@ -8,6 +8,7 @@ namespace BusinessLogic.Views
     {
         public int? Id { get; set; }
         public string quest { get; set; }
-        public string answer { get; set; }
+        public string answers { get; set; }
+        public int rightNum { get; set; }
     }
 }

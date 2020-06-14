@@ -35,6 +35,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -94,11 +95,21 @@
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 6;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(102, 113);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(91, 23);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Добавить Вопрос";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // TestAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(290, 171);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
@@ -122,5 +133,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button button3;
     }
 }

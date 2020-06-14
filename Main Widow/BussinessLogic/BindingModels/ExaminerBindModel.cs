@@ -7,7 +7,7 @@ namespace BusinessLogic.BindingModels
 {
     public class ExaminerBindModel
     {
-        public int? Id { get; set; }
+        public int Id { get; set; }
         public string examinerName { get; set; }
     }
 }

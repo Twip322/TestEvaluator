@@ -8,6 +8,7 @@ namespace BusinessLogic.BindingModels
     public class TestBindModel
     {
         public int? Id { get; set; }
-        public Dictionary<int,int> questions { get; set; }
+        public string testName { get; set; }
+        public Dictionary<int, (string, int)> testQuestions { get; set; }
     }
 }
