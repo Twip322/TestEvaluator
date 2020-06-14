@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace UserInterface
 {
     public partial class TestOut : Form
     {
+        [Dependency]
+        public new IUnityContainer Container { get; set; }
         public TestOut()
         {
             InitializeComponent();
@@ -24,7 +27,8 @@ namespace UserInterface
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<TestAdd>();
+            form.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

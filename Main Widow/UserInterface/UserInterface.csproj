@@ -147,6 +147,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddQuestInTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddQuestInTest.Designer.cs">
+      <DependentUpon>AddQuestInTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <Compile Include="TestOut.Designer.cs">
       <DependentUpon>TestOut.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddQuestInTest.resx">
+      <DependentUpon>AddQuestInTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>

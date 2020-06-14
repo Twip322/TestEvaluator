@@ -8,6 +8,6 @@ namespace BusinessLogic.Views
     {
         public int? Id { get; set; }
         public string testName { get; set; }
-        public Dictionary<int,(string,int)> testQuestions { get;set; }
+        public Dictionary<int,(string,string,int)> testQuestions { get;set; }
     }
 }

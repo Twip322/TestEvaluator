@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace UserInterface
 {
     public partial class FormMain : Form
     {
-        FormTesting test;
+        [Dependency]
+        public new IUnityContainer Container { get; set; }
         public FormMain()
         {
             InitializeComponent();
@@ -20,13 +22,14 @@ namespace UserInterface
 
         private void Testing_Click(object sender, EventArgs e)
         {
-            test = new FormTesting();
-            test.Show();
+            var form = Container.Resolve<FormTesting>();
+            form.ShowDialog();
         }
 
         private void Test_Click(object sender, EventArgs e)
         {
-
+            var form = Container.Resolve<TestOut>();
+            form.ShowDialog();
         }
 
       

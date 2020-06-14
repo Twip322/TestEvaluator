@@ -93,7 +93,7 @@ namespace DataBaseImplemention.Logic
                    .Include(recPC => recPC.questions)
                    .Where(recPC => recPC.TestId == rec.Id)
                 .ToDictionary(recPC => recPC.QuestionId, recPC =>
-                (recPC.questions.ansewrs, recPC.questions.rightNum))
+                (recPC.questions.quest,recPC.questions.ansewrs,recPC.questions.rightNum))
                 })
                 .ToList();
             }

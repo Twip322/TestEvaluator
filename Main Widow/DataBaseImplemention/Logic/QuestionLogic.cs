@@ -16,10 +16,6 @@ namespace DataBaseImplemention.Logic
             {
                 Questions element = context.Questions.FirstOrDefault(rec =>
                rec.quest == model.quest && rec.Id != model.Id);
-                if (element != null)
-                {
-                    throw new Exception("Уже есть компонент с таким названием");
-                }
                 if (model.Id.HasValue)
                 {
                     element = context.Questions.FirstOrDefault(rec => rec.Id ==
@@ -49,6 +45,7 @@ namespace DataBaseImplemention.Logic
                 .Select(rec => new Question
                 {
                     Id = rec.Id,
+                    quest=rec.quest,
                     answers = rec.ansewrs,
                     rightNum=rec.rightNum
                 })
