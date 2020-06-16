@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic.Views;
+using DataBaseImplemention.Logic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,14 +17,22 @@ namespace UserInterface
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        public TestOut()
+        TestLogic testLogic;
+        public TestOut(TestLogic testLogic)
         {
             InitializeComponent();
+            this.testLogic = testLogic;
         }
-
+            
         private void TestAdd_Load(object sender, EventArgs e)
         {
-
+            var list = testLogic.Read(null);
+            if (list != null)
+            {
+                dataGridView1.DataSource = list;
+                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[2].Visible = false;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -31,9 +41,12 @@ namespace UserInterface
             form.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       
 
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

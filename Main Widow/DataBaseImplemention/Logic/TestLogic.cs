@@ -4,6 +4,7 @@ using DataBaseImplemention.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -43,7 +44,7 @@ namespace DataBaseImplemention.Logic
                         if (model.Id.HasValue)
                         {
                             var Testquestions = context.TestsQuestions.Where(rec
-                           => rec.QuestionId == model.Id.Value).ToList();
+                           => rec.TestId == model.Id.Value).ToList();
                             // удалили те, которых нет в модели
                             context.TestsQuestions.RemoveRange(Testquestions.Where(rec =>
                             !model.testQuestions.ContainsKey(rec.QuestionId)).ToList());
@@ -63,6 +64,9 @@ namespace DataBaseImplemention.Logic
                             {
                                 TestId = element.Id,
                                 QuestionId = questions.Key,
+                                questName = questions.Value.Item1,
+                                answers = questions.Value.Item2,
+                                rightNum=questions.Value.Item3
                             });
                             context.SaveChanges();
                         }
@@ -89,11 +93,12 @@ namespace DataBaseImplemention.Logic
                 .Select(rec => new Test
                 {
                     Id = rec.Id,
+                    testName=rec.testName,
                    testQuestions=context.TestsQuestions
                    .Include(recPC => recPC.questions)
                    .Where(recPC => recPC.TestId == rec.Id)
                 .ToDictionary(recPC => recPC.QuestionId, recPC =>
-                (recPC.questions.quest,recPC.questions.ansewrs,recPC.questions.rightNum))
+                (recPC.questName,recPC.answers,recPC.rightNum))
                 })
                 .ToList();
             }

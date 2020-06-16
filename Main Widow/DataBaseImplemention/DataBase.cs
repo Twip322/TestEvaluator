@@ -16,7 +16,6 @@ namespace DataBaseImplemention
             }
             base.OnConfiguring(optionsBuilder);
         }
-        public virtual DbSet<Examiners> Examiners { get; set; }
         public virtual DbSet<Questions> Questions { get; set; }
         public virtual DbSet<Tests> Tests { get; set; }
         public virtual DbSet<TestQuestions> TestsQuestions { get; set; }

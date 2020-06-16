@@ -29,41 +29,15 @@
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(42, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Вывести";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(297, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(242, 147);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(19, 94);
+            this.button2.Location = new System.Drawing.Point(18, 207);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 30);
             this.button2.TabIndex = 3;
@@ -71,18 +45,36 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // TestAdd
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(145, 207);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(144, 30);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(326, 168);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // TestOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 242);
+            this.ClientSize = new System.Drawing.Size(395, 247);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Name = "TestAdd";
+            this.Name = "TestOut";
             this.Text = "Добавление Тестов";
             this.Load += new System.EventHandler(this.TestAdd_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -90,9 +82,8 @@
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

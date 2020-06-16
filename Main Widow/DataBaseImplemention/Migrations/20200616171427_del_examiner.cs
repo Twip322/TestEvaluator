@@ -2,7 +2,7 @@
 
 namespace DataBaseImplemention.Migrations
 {
-    public partial class test : Migration
+    public partial class del_examiner : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,26 +35,6 @@ namespace DataBaseImplemention.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Examiners",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    examinerName = table.Column<string>(nullable: true),
-                    TestId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Examiners", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Examiners_Tests_TestId",
-                        column: x => x.TestId,
-                        principalTable: "Tests",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TestsQuestions",
                 columns: table => new
                 {
@@ -62,6 +42,9 @@ namespace DataBaseImplemention.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TestId = table.Column<int>(nullable: false),
                     QuestionId = table.Column<int>(nullable: false),
+                    questName = table.Column<string>(nullable: true),
+                    answers = table.Column<string>(nullable: true),
+                    rightNum = table.Column<int>(nullable: false),
                     testsId = table.Column<int>(nullable: true),
                     QuestID = table.Column<int>(nullable: true)
                 },
@@ -83,11 +66,6 @@ namespace DataBaseImplemention.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Examiners_TestId",
-                table: "Examiners",
-                column: "TestId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_TestsQuestions_QuestID",
                 table: "TestsQuestions",
                 column: "QuestID");
@@ -100,9 +78,6 @@ namespace DataBaseImplemention.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Examiners");
-
             migrationBuilder.DropTable(
                 name: "TestsQuestions");
 

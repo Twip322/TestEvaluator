@@ -21,39 +21,34 @@ namespace UserInterface
 
         public int Id
         {
-            get { return Convert.ToInt32(comboBox1.SelectedValue); }
-            set { comboBox1.SelectedValue = value; }
+            get { return Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value); }
         }
-        public string quest { get { return comboBox1.Text; } }
-        public string answer { get { return comboBox1.Items.ToString(); } }
+
+        public string quest { get { return dataGridView1.SelectedRows[0].Cells[1].Value.ToString(); } }
+        public string answer { get { return dataGridView1.SelectedRows[0].Cells[2].Value.ToString(); } }
+        public int rightNum { get { return Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[3].Value); } }
         public AddQuestInTest(QuestionLogic logic)
         {
             InitializeComponent();
             List<Question> list = logic.Read(null);
             if (list != null)
             {
-                comboBox1.DisplayMember = "quest";
-                comboBox1.ValueMember = "Id";
-                comboBox1.DataSource = list;
-                comboBox1.SelectedItem = null;
-
+                dataGridView1.DataSource = list;
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
-        }
-
-
-        private void AddQuestInTest_Load(object sender, EventArgs e)
-        {
 
         }
-
         private void buttonCreate_Click(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.OK;
+            Close();
 
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
-            
+            DialogResult = DialogResult.Cancel;
+            Close();
         }
     }
 }

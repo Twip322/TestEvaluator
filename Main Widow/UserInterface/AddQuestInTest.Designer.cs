@@ -30,12 +30,13 @@
         {
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonCreate = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(134, 63);
+            this.buttonCancel.Location = new System.Drawing.Point(297, 201);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(91, 23);
             this.buttonCancel.TabIndex = 3;
@@ -45,33 +46,33 @@
             // 
             // buttonCreate
             // 
-            this.buttonCreate.Location = new System.Drawing.Point(37, 63);
+            this.buttonCreate.Location = new System.Drawing.Point(200, 201);
             this.buttonCreate.Name = "buttonCreate";
             this.buttonCreate.Size = new System.Drawing.Size(91, 23);
             this.buttonCreate.TabIndex = 2;
-            this.buttonCreate.Text = "Создать";
+            this.buttonCreate.Text = "Добавить";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
-            // comboBox1
+            // dataGridView1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(40, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 21);
-            this.comboBox1.TabIndex = 4;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(569, 182);
+            this.dataGridView1.TabIndex = 4;
             // 
             // AddQuestInTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(256, 107);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(580, 236);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonCreate);
             this.Name = "AddQuestInTest";
             this.Text = "AddQuestInTest";
-            this.Load += new System.EventHandler(this.AddQuestInTest_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -80,6 +81,6 @@
 
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonCreate;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

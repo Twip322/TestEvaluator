@@ -25,7 +25,6 @@ namespace UserInterface
         private static IUnityContainer BuildUnityContainer()
         {
             var currentContainer = new UnityContainer();
-            currentContainer.RegisterType<ExaminerLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<QuestionLogic>(new HierarchicalLifetimeManager());
             currentContainer.RegisterType<TestLogic>(new HierarchicalLifetimeManager());
             return currentContainer;

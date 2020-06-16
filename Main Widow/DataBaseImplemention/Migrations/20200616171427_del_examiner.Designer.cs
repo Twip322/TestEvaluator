@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataBaseImplemention.Migrations
 {
     [DbContext(typeof(DataBase))]
-    [Migration("20200614101506_test")]
-    partial class test
+    [Migration("20200616171427_del_examiner")]
+    partial class del_examiner
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,26 +20,6 @@ namespace DataBaseImplemention.Migrations
                 .HasAnnotation("ProductVersion", "3.1.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("DataBaseImplemention.Models.Examiners", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("TestId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("examinerName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TestId");
-
-                    b.ToTable("Examiners");
-                });
 
             modelBuilder.Entity("DataBaseImplemention.Models.Questions", b =>
                 {
@@ -78,6 +58,15 @@ namespace DataBaseImplemention.Migrations
                     b.Property<int>("TestId")
                         .HasColumnType("int");
 
+                    b.Property<string>("answers")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("questName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("rightNum")
+                        .HasColumnType("int");
+
                     b.Property<int?>("testsId")
                         .HasColumnType("int");
 
@@ -103,13 +92,6 @@ namespace DataBaseImplemention.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Tests");
-                });
-
-            modelBuilder.Entity("DataBaseImplemention.Models.Examiners", b =>
-                {
-                    b.HasOne("DataBaseImplemention.Models.Tests", "Test")
-                        .WithMany()
-                        .HasForeignKey("TestId");
                 });
 
             modelBuilder.Entity("DataBaseImplemention.Models.TestQuestions", b =>
