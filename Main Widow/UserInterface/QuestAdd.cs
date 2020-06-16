@@ -34,7 +34,7 @@ namespace UserInterface
                 {
                     Id = id,
                     quest = textBoxName.Text,
-                    answers=textBoxANS1.Text+'\n'+textBoxANS2.Text+'\n'+textBoxANS3.Text+'\n'+textBoxANS4.Text,
+                    answers=textBoxANS1.Text+' '+textBoxANS2.Text+' '+textBoxANS3.Text+' '+textBoxANS4.Text,
                     rightNum=Convert.ToInt32(textBoxRIGHT.Text)
                 });
             }
