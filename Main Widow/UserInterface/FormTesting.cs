@@ -66,11 +66,11 @@ namespace UserInterface
         {
             if (radioButton1.Checked)
                 answer = 1;
-            if (radioButton2.Checked)
+            else if (radioButton2.Checked)
                 answer = 2;
-            if (radioButton3.Checked)
+            else if (radioButton3.Checked)
                 answer = 3;
-            if (radioButton4.Checked)
+            else if (radioButton4.Checked)
                 answer = 4;
 
             if (answer == tmp[questNum[questNumCurr]].Item3)

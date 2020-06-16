@@ -37,13 +37,13 @@
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.Answer = new System.Windows.Forms.Button();
             this.DNK = new System.Windows.Forms.Button();
-            this.groupBox = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.End = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox.SuspendLayout();
+            this.groupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -79,43 +79,41 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(122, 30);
+            this.radioButton1.Location = new System.Drawing.Point(18, 30);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(64, 17);
             this.radioButton1.TabIndex = 6;
-            this.radioButton1.Text = "Ответ 2";
+            this.radioButton1.Text = "Ответ 1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(122, 68);
+            this.radioButton2.Location = new System.Drawing.Point(122, 30);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(64, 17);
             this.radioButton2.TabIndex = 7;
-            this.radioButton2.Text = "Ответ 4";
+            this.radioButton2.Text = "Ответ 2";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(18, 30);
+            this.radioButton3.Location = new System.Drawing.Point(18, 62);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(64, 17);
             this.radioButton3.TabIndex = 8;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Ответ 1";
+            this.radioButton3.Text = "Ответ 3";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(18, 68);
+            this.radioButton4.Location = new System.Drawing.Point(122, 62);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(64, 17);
             this.radioButton4.TabIndex = 9;
-            this.radioButton4.Text = "Ответ 3";
+            this.radioButton4.Text = "Ответ 4";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // Answer
@@ -139,19 +137,6 @@
             this.DNK.Text = "Не знаю";
             this.DNK.UseVisualStyleBackColor = true;
             this.DNK.Click += new System.EventHandler(this.DNK_Click);
-            // 
-            // groupBox
-            // 
-            this.groupBox.Controls.Add(this.radioButton3);
-            this.groupBox.Controls.Add(this.radioButton1);
-            this.groupBox.Controls.Add(this.radioButton2);
-            this.groupBox.Controls.Add(this.radioButton4);
-            this.groupBox.Location = new System.Drawing.Point(312, 195);
-            this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(200, 94);
-            this.groupBox.TabIndex = 12;
-            this.groupBox.TabStop = false;
-            this.groupBox.Text = "Ответы";
             // 
             // richTextBox1
             // 
@@ -189,6 +174,19 @@
             this.textBox1.Size = new System.Drawing.Size(215, 20);
             this.textBox1.TabIndex = 18;
             // 
+            // groupBox
+            // 
+            this.groupBox.Controls.Add(this.radioButton3);
+            this.groupBox.Controls.Add(this.radioButton1);
+            this.groupBox.Controls.Add(this.radioButton2);
+            this.groupBox.Controls.Add(this.radioButton4);
+            this.groupBox.Location = new System.Drawing.Point(312, 201);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(200, 88);
+            this.groupBox.TabIndex = 12;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Ответы";
+            // 
             // FormTesting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,9 +205,9 @@
             this.Name = "FormTesting";
             this.Text = "Тестирование";
             this.Load += new System.EventHandler(this.FormTesting_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,10 +223,10 @@
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.Button Answer;
         private System.Windows.Forms.Button DNK;
-        private System.Windows.Forms.GroupBox groupBox;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button End;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox;
     }
 }
