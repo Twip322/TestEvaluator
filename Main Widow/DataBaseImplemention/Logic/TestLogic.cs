@@ -81,8 +81,39 @@ namespace DataBaseImplemention.Logic
                 }
             }
         }
-    
 
+        public void Delete(TestBindModel model)
+        {
+            using (var context = new DataBase())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        // удаяем записи по компонентам при удалении изделия
+                        context.TestsQuestions.RemoveRange(context.TestsQuestions.Where(rec =>
+                        rec.TestId == model.Id));
+                        Tests element = context.Tests.FirstOrDefault(rec => rec.Id
+                       == model.Id);
+                        if (element != null)
+                        {
+                            context.Tests.Remove(element);
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            throw new Exception("Элемент не найден");
+                        }
+                        transaction.Commit();
+                    }
+                    catch (Exception)
+                    {
+                        transaction.Rollback();
+                        throw;
+                    }
+                }
+            }
+        }
         public List<Test> Read(TestBindModel model)
         {
             using (var context = new DataBase())

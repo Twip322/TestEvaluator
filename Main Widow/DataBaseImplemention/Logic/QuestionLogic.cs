@@ -36,6 +36,23 @@ namespace DataBaseImplemention.Logic
                 context.SaveChanges();
             }
         }
+        public void Delete(QuestionBindModel model)
+        {
+            using (var context = new DataBase())
+            {
+                Questions element = context.Questions.FirstOrDefault(rec => rec.Id ==
+               model.Id);
+                if (element != null)
+                {
+                    context.Questions.Remove(element);
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Элемент не найден");
+                }
+            }
+        }
         public List<Question> Read(QuestionBindModel model)
         {
             using (var context = new DataBase())

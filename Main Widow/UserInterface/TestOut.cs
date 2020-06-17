@@ -1,4 +1,5 @@
-﻿using BusinessLogic.Views;
+﻿using BusinessLogic.BindingModels;
+using BusinessLogic.Views;
 using DataBaseImplemention.Logic;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace UserInterface
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        TestLogic testLogic;
+        private readonly TestLogic testLogic;
         public TestOut(TestLogic testLogic)
         {
             InitializeComponent();
@@ -25,6 +26,10 @@ namespace UserInterface
         }
             
         private void TestAdd_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        private void LoadData()
         {
             var list = testLogic.Read(null);
             if (list != null)
@@ -34,11 +39,11 @@ namespace UserInterface
                 dataGridView1.Columns[2].Visible = false;
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             var form = Container.Resolve<TestAdd>();
             form.ShowDialog();
+            LoadData();
         }
 
        
@@ -47,6 +52,29 @@ namespace UserInterface
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                if (MessageBox.Show("Удалить запись", "Вопрос", MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int id =
+                   Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                    try
+                    {
+                        testLogic.Delete(new TestBindModel { Id = id });
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                    }
+                    LoadData();
+                }
+            }
         }
     }
 }
