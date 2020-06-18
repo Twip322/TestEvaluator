@@ -115,7 +115,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonCreate);
             this.Name = "TestAdd";
-            this.Text = "TestAdd";
+            this.Text = "Добавление Теста";
             this.Load += new System.EventHandler(this.TestAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

@@ -111,45 +111,45 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(56, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Название Теста";
+            this.label1.Text = "Вопрос";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(10, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Вопрос 1";
+            this.label2.Text = "Ответ 1";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(10, 67);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 14;
-            this.label3.Text = "Вопрос 2";
+            this.label3.Text = "Ответ 2";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(10, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Вопрос 3";
+            this.label4.Text = "Ответ 3";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(10, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Вопрос 4";
+            this.label5.Text = "Ответ 4";
             // 
             // label6
             // 
@@ -180,7 +180,7 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonCreate);
             this.Name = "QuestAdd";
-            this.Text = "QuestAdd";
+            this.Text = "Добавление Вопроса";
             this.Load += new System.EventHandler(this.QuestAdd_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
